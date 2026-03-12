@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tung Sahur Horror</title>
+
+<style>
+html,body{
+margin:0;
+padding:0;
+height:100%;
+background:black;
+font-family:Arial;
+overflow:hidden;
+}
+
+/* play screen */
+#cover{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:black;
+}
+
+/* play button */
+#playButton{
+font-size:60px;
+padding:30px 80px;
+background:#111;
+color:white;
+border:4px solid white;
+border-radius:20px;
+cursor:pointer;
+transition:0.25s;
+}
+
+#playButton:hover{
+background:white;
+color:black;
+transform:scale(1.1);
+}
+
+/* game frame */
+#game{
+display:none;
+position:absolute;
+width:100%;
+height:100%;
+border:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="cover">
+<button id="playButton" onclick="startGame()">▶ PLAY</button>
+</div>
+
+<iframe id="game"></iframe>
+
+<script>
+function startGame(){
+
+document.getElementById("cover").style.display="none";
+
+const win = window.open("about:blank","_blank");
+
+win.document.write(`
+<html>
+<head>
+<title>Tung Sahur Horror</title>
+<style>
+html,body{
+margin:0;
+height:100%;
+background:black;
+overflow:hidden;
+}
+iframe{
+width:100%;
+height:100%;
+border:none;
+}
+</style>
+</head>
+<body>
+<iframe src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/tungtung/"></iframe>
+</body>
+</html>
+`);
+
+win.document.close();
+}
+</script>
+
+</body>
+</html>
+</script>
+
+</body>
+
+</html>
